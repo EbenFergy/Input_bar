@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Button from "../../UI/Button/Button";
 
 const FormControl = styled.div`
@@ -15,7 +15,7 @@ const FormControl = styled.div`
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
-    color:${props=>props.noInputLabel ? '':'red'}
+    color: ${(props) => (props.noInputLabel ? "" : "red")};
   }
 
   & input {
@@ -50,7 +50,7 @@ const CourseInput = (props) => {
   };
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl noInputLabel = {classChange}>
+      <FormControl noInputLabel={classChange}>
         <label>Course Goal</label>
         <input
           className={classChange ? "" : "noInput"}
