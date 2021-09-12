@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const AppStyle = createGlobalStyle`
   * {
     padding: none;
     margin: none;
@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
+    align-items: center;
+    justify-content: center;
     padding: none;
     margin: none;
     width: 100vw;
@@ -18,7 +20,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: #0000;
   }
 
+  .rootChild{
+    margin-top: 5rem;
+  }
 
 `;
 
-export default GlobalStyle;
+export default AppStyle;

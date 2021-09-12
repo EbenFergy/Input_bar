@@ -5,9 +5,10 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   font: inherit;
-  width: 5rem;
+  width: auto;
   height: 2rem;
   color: #ffff;
+  cursor: pointer;
 `;
 
 export default Button;

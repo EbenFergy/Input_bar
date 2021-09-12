@@ -1,15 +1,18 @@
 import React from "react";
 import DisplayStyle from "./DisplayStyle";
-import Cards from "../UI/Cards/Cards";
+
 
 const Display = ({ userCred }) => {
+  
   return (
     <DisplayStyle>
       {userCred.map((cred) => (
-        <div className="output">
+        <div key={cred.id} className="output">
           {cred.username} {cred.age}
         </div>
       ))}
+
+      
     </DisplayStyle>
   );
 };
