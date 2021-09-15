@@ -12,6 +12,7 @@ const DisplayStyle = styled.div`
     border: 1px solid;
     margin-bottom: 5px;
   }
+
 `;
 
 export default DisplayStyle;

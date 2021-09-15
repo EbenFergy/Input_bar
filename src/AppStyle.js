@@ -17,13 +17,17 @@ const AppStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0000;
+    background: rgb(236,38,116);
+background: linear-gradient(90deg, rgba(236,38,116,1) 0%, rgba(238,160,51,1) 100%);
   }
 
   .rootChild{
     margin-top: 5rem;
   }
 
+ .opacity{
+    opacity:0.1;
+  }
 `;
 
 export default AppStyle;

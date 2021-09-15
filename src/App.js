@@ -12,6 +12,7 @@ import Display from "./components/Display/Display";
 
 const App = () => {
   const [gottenInputs, setGottenInputs] = useState([]);
+  
 
   const getInputs = (formInputs) => {
     setGottenInputs((prevGottenInputs) => {
@@ -19,6 +20,7 @@ const App = () => {
     });
   };
 
+ 
   //---------------------------Functions for Modal-------------------------------------------
   // const [modalOpen, setModalOpen] = useState(false);
 
@@ -36,13 +38,11 @@ const App = () => {
       <Cards>
         <Form inputsHere={getInputs} />
       </Cards>
-      {gottenInputs.length > 0 &&
+      {gottenInputs.length > 0 && (
         <Cards>
-          <Display userCred={gottenInputs} />
+              <Display userCred={gottenInputs} />
         </Cards>
-      }
-
-
+      )}
 
       {/* <ModalStyle>
         {modalOpen ? (

@@ -31,6 +31,9 @@ const Form = ({ inputsHere }) => {
     userDetails.username.length > 0 && userDetails.age.length > 0
       ? inputsHere(userDetails)
       : setModalOpen(true);
+
+    setUsernameInput("");
+    setAgeInput("");
   };
 
   const closeModalHandler = () => {
@@ -41,24 +44,22 @@ const Form = ({ inputsHere }) => {
     <FormStyle onSubmit={submitHandler}>
       <div className="input">
         <label>Username</label>
-        <input type="text" onChange={usernameHandler} />
+        <input value={usernameInput} type="text" onChange={usernameHandler} />
       </div>
       <div className="input">
         <label>Age/Years</label>
-        <input type="number" onChange={ageHandler} />
+        <input value={ageInput} type="number" onChange={ageHandler} />
       </div>
       <Button>Add User</Button>
 
-      <ModalStyle>
-        {modalOpen ? (
-          <div className="modal">
+      {modalOpen ? (
+        <ModalStyle>
             <Cards>
               <h5>Please put in a valid username or Age</h5>
               <Button onClick={closeModalHandler}>Close</Button>
             </Cards>
-          </div>
-        ) : null}
-      </ModalStyle>
+        </ModalStyle>
+      ) : null}
     </FormStyle>
   );
 };
