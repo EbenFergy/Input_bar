@@ -55,6 +55,8 @@ const Form = ({ inputsHere }) => {
           <label htmlFor="age">Age/Years</label>
           <input
             id="age"
+            min="1"
+            step="1"
             value={ageInput}
             type="number"
             onChange={ageHandler}
@@ -67,7 +69,7 @@ const Form = ({ inputsHere }) => {
         <div>
           <DarkOpacity onClick={closeModalHandler} />
           <ModalStyle>
-            <Cards className="background" >
+            <Cards className="background">
               <h5>Please put in a valid username or Age</h5>
               <Button onClick={closeModalHandler}>Close</Button>
             </Cards>

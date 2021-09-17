@@ -19,16 +19,10 @@ const App = () => {
     });
   };
 
-  //---------------------------Functions for Modal-------------------------------------------
-  // const [modalOpen, setModalOpen] = useState(false);
-
-  // const openModalHandler = () => {
-  //   setModalOpen(true);
-  // };
-
-  // const closeModalHandler = () => {
-  //   setModalOpen(false);
-  // };
+  const filtGottenInputs = (credOfChange) => {
+    const filtration = gottenInputs.filter((inps) => inps.id !== credOfChange);
+    setGottenInputs(filtration);
+  };
 
   return (
     <>
@@ -37,24 +31,10 @@ const App = () => {
         <Form inputsHere={getInputs} />
       </Cards>
       {gottenInputs.length > 0 && (
-        <Cards>
-          <Display userCred={gottenInputs} />
+        <Cards style={{ marginTop: "1rem" }}>
+          <Display userCred={gottenInputs} filtFunc={filtGottenInputs} />
         </Cards>
       )}
-
-      {/* <ModalStyle>
-        {modalOpen ? (
-          <div className="modal">
-            <Cards>
-              <div>asdasdf</div>
-              <div>asdasdf</div>
-              <div>asdasdf</div>
-              <div>asdasdf</div>
-              <Button onClick={closeModalHandler}>Close</Button>
-            </Cards>
-          </div>
-        ) : null}
-      </ModalStyle> */}
     </>
   );
 };
