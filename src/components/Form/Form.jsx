@@ -63,12 +63,11 @@ const Form = ({ inputsHere }) => {
         <Button>Add User</Button>
       </FormStyle>
 
-      {modalOpen ? (
+      {modalOpen === true ? (
         <div>
           <DarkOpacity onClick={closeModalHandler} />
           <ModalStyle>
-            <Cards className="background">
-              <CardsHeader>yooo</CardsHeader>
+            <Cards className="background" >
               <h5>Please put in a valid username or Age</h5>
               <Button onClick={closeModalHandler}>Close</Button>
             </Cards>

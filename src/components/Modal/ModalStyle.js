@@ -6,12 +6,14 @@ export const ModalStyle = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
+  /* border: 5px solid; */
 `;
 
 export const DarkOpacity = styled.div`
@@ -22,7 +24,7 @@ export const DarkOpacity = styled.div`
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
-  border: 2px solid;
+  /* border: 5px solid; */
 `;

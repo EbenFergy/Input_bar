@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form/Form";
 import AppStyle from "./AppStyle";
-import {Cards} from "./components/UI/Cards/Cards";
+import { Cards } from "./components/UI/Cards/Cards";
 import Display from "./components/Display/Display";
 // import ModalComponent from "./components/Modal/Modal";
 
@@ -12,7 +12,6 @@ import Display from "./components/Display/Display";
 
 const App = () => {
   const [gottenInputs, setGottenInputs] = useState([]);
-  
 
   const getInputs = (formInputs) => {
     setGottenInputs((prevGottenInputs) => {
@@ -20,7 +19,6 @@ const App = () => {
     });
   };
 
- 
   //---------------------------Functions for Modal-------------------------------------------
   // const [modalOpen, setModalOpen] = useState(false);
 
@@ -40,7 +38,7 @@ const App = () => {
       </Cards>
       {gottenInputs.length > 0 && (
         <Cards>
-              <Display userCred={gottenInputs} />
+          <Display userCred={gottenInputs} />
         </Cards>
       )}
 

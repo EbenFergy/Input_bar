@@ -7,11 +7,9 @@ export const Cards = styled.div`
   align-items: center;
   width: auto;
   border-radius: 10px;
-  box-shadow: 1px 1px 2px rgba(2, 2, 1, 0.5);
+  box-shadow: 2px 2px 20px rgba(2, 2, 1, 0.5);
   padding: 2rem 5rem 2rem 5rem;
   background-color: white;
-
-  
 `;
 
 export const CardsHeader = styled.div`
