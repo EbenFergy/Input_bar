@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import FormStyle from "./FormStyle";
+import { FormStyle, FormContainer } from "./FormStyle";
 import Button from "../UI/Button/Button";
-
-import ModalStyle from "../Modal/ModalStyle";
-import Cards from "../UI/Cards/Cards";
+import { ModalStyle, DarkOpacity } from "../Modal/ModalStyle";
+import { Cards, CardsHeader } from "../UI/Cards/Cards";
 // import Modal from "react-modal";
 
 const Form = ({ inputsHere }) => {
@@ -41,26 +40,42 @@ const Form = ({ inputsHere }) => {
   };
 
   return (
-    <FormStyle onSubmit={submitHandler}>
-      <div className="input">
-        <label>Username</label>
-        <input value={usernameInput} type="text" onChange={usernameHandler} />
-      </div>
-      <div className="input">
-        <label>Age/Years</label>
-        <input value={ageInput} type="number" onChange={ageHandler} />
-      </div>
-      <Button>Add User</Button>
+    <FormContainer>
+      <FormStyle onSubmit={submitHandler}>
+        <div className="input">
+          <label htmlFor="username">Username</label>
+          <input
+            id="username"
+            value={usernameInput}
+            type="text"
+            onChange={usernameHandler}
+          />
+        </div>
+        <div className="input">
+          <label htmlFor="age">Age/Years</label>
+          <input
+            id="age"
+            value={ageInput}
+            type="number"
+            onChange={ageHandler}
+          />
+        </div>
+        <Button>Add User</Button>
+      </FormStyle>
 
       {modalOpen ? (
-        <ModalStyle>
-            <Cards>
+        <div>
+          <DarkOpacity onClick={closeModalHandler} />
+          <ModalStyle>
+            <Cards className="background">
+              <CardsHeader>yooo</CardsHeader>
               <h5>Please put in a valid username or Age</h5>
               <Button onClick={closeModalHandler}>Close</Button>
             </Cards>
-        </ModalStyle>
+          </ModalStyle>
+        </div>
       ) : null}
-    </FormStyle>
+    </FormContainer>
   );
 };
 

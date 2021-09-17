@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form/Form";
 import AppStyle from "./AppStyle";
-import Cards from "./components/UI/Cards/Cards";
+import {Cards} from "./components/UI/Cards/Cards";
 import Display from "./components/Display/Display";
 // import ModalComponent from "./components/Modal/Modal";
 
