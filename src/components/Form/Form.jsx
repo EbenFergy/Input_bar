@@ -1,9 +1,40 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import { FormStyle, FormContainer } from "./FormStyle";
 import Button from "../UI/Button/Button";
 import { ModalStyle, DarkOpacity } from "../Modal/ModalStyle";
 import { Cards, CardsHeader } from "../UI/Cards/Cards";
 // import Modal from "react-modal";
+
+const BackDrop = ({ closeModal, modalOpen }) => {
+  return modalOpen ? <DarkOpacity onClick={closeModal} /> : null;
+};
+
+const Modal = ({ closeModal, modalOpen }) => {
+  return modalOpen ? (
+    <ModalStyle>
+      <Cards className="background">
+        <h5>Please put in a valid username or Age</h5>
+        <Button onClick={closeModal}>Close</Button>
+      </Cards>
+    </ModalStyle>
+  ) : null;
+};
+
+
+
+// const BackDrop = ({ closeModal }) => {
+//   <DarkOpacity onClick={closeModal} />
+// };
+
+// const Modal = ({ closeModal }) => {
+//   <ModalStyle>
+//     <Cards className="background">
+//       <h5>Please put in a valid username or Age</h5>
+//       <Button onClick={closeModal}>Close</Button>
+//     </Cards>
+//   </ModalStyle>
+// };
 
 const Form = ({ inputsHere }) => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -65,17 +96,27 @@ const Form = ({ inputsHere }) => {
         <Button>Add User</Button>
       </FormStyle>
 
-      {modalOpen === true ? (
-        <div>
-          <DarkOpacity onClick={closeModalHandler} />
-          <ModalStyle>
-            <Cards className="background">
-              <h5>Please put in a valid username or Age</h5>
-              <Button onClick={closeModalHandler}>Close</Button>
-            </Cards>
-          </ModalStyle>
-        </div>
-      ) : null}
+      {ReactDOM.createPortal(
+        <Modal modalOpen={modalOpen} closeModal={closeModalHandler} />,
+        document.getElementById("backDrop")
+      )}
+      {ReactDOM.createPortal(
+        <BackDrop modalOpen={modalOpen} closeModal={closeModalHandler} />,
+        document.getElementById("backDrop")
+      )}
+
+      {/* {modalOpen === true ? (
+        <>
+          {ReactDOM.createPortal(
+            <BackDrop closeModal={closeModalHandler} />,
+            document.getElementById("backDrop")
+          )}
+          {ReactDOM.createPortal(
+            <Modal closeModal={closeModalHandler} />,
+            document.getElementById("modal")
+          )}
+        </>
+      ) : null} */}
     </FormContainer>
   );
 };
